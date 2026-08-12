@@ -48,7 +48,11 @@
 
 <script>
 function addToCart() {
-  const quantity = document.getElementById("qty").textContent;
+  const quantity = parseInt(document.getElementById("qty").textContent);
+  const cartCount = document.getElementById("cartCount");
+
+  const currentCount = parseInt(cartCount.textContent) || 0;
+  cartCount.textContent = currentCount + quantity;
 
   alert(
     "ADDED TO CART\n\n" +
