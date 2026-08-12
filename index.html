@@ -42,9 +42,11 @@
 <div class="price">₹ <span>ADD PRICE</span></div>
 <div class="quantity"><button onclick="changeQty(-1)">−</button><span id="qty">1</span><button onclick="changeQty(1)">+</button></div>
 <button class="buy-btn" onclick="openOrderForm()">Buy Now</button>
+
 <button class="cart-btn" onclick="addToCart()">Add to Cart</button>
+
 <script>
-  function addToCart() {
+function addToCart() {
   const quantity = document.getElementById("qty").textContent;
 
   alert(
