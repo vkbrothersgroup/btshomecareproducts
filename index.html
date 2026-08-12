@@ -3,56 +3,573 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BTS HOME CARE PRODUCTS™</title>
+<title>BTS HOME CARE PRODUCTS</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+.cart-link {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #167f4b;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cart-section {
+  padding: 70px 20px;
+}
+
+.cart-box {
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid #dce8e2;
+  border-radius: 20px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.cart-item img {
+  width: 90px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-info h3 {
+  margin: 0 0 8px;
+}
+
+.cart-item-info p {
+  margin: 5px 0;
+}
+
+.remove-btn {
+  border: 1px solid #d33;
+  background: white;
+  color: #d33;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: #16864d;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.order-form {
+  display: none;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #dce8e2;
+  border-radius: 20px;
+  background: white;
+}
+
+.order-form input,
+.order-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  margin: 8px 0 15px;
+  border: 1px solid #ccd9d2;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.whatsapp-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: #16864d;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+}
+</style>
 </head>
+
 <body>
-<header class="header"><div class="container nav">
-<a class="brand" href="#home">BTS HOME CARE PRODUCTS<span>™</span></a>
-<nav><a href="#home">Home</a><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-<a class="nav-btn" href="#contact">Contact Us</a>
-<a class="cart-link" href="#cart">🛒 Cart (<span id="cartCount">0</span>)</a>
-</div></header>
+
+<header class="header">
+  <div class="container nav">
+
+    <a class="brand" href="#home">
+      BTS HOME CARE PRODUCTS<span>™</span>
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="nav-btn" href="#contact">Contact Us</a>
+
+    <a class="cart-link" href="#cart">
+      🛒 Cart (<span id="cartCount">0</span>)
+    </a>
+
+  </div>
+</header>
 
 <main>
-<section id="home" class="hero"><div class="container hero-grid"><div>
-<p class="eyebrow">BTS HOME CARE PRODUCTS™</p>
-<h1>Clean home.<br><span>Healthy home.</span></h1>
-<p class="hero-text">Reliable home-care products for everyday cleaning, freshness and hygiene.</p>
-<div class="actions"><a class="btn primary" href="#products">Shop Products</a><a class="btn secondary" href="#contact">Get in Touch</a></div>
-</div>
-<div class="hero-card"><img src="images/floor-cleaner-front.png" alt="BTS Floor Cleaner Liquid 1000 ML"></div>
-</div></section>
 
-<section id="products" class="section"><div class="container">
-<div class="section-head"><p class="eyebrow">OUR PRODUCTS</p><h2>Shop BTS home-care products.</h2><p>Our BTS Floor Cleaner Liquid is ready to display online. More products can be added next.</p></div>
+<!-- HOME -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
 
-<article class="store-product">
-<div class="gallery">
-<div class="main-image"><img id="mainProductImage" src="images/floor-cleaner-front.png" alt="BTS Floor Cleaner Liquid 1000 ML"></div>
-<div class="thumbs">
-<button onclick="changeImage('images/floor-cleaner-front.png')"><img src="images/floor-cleaner-front.png" alt="Front"></button>
-<button onclick="changeImage('images/floor-cleaner-back.png')"><img src="images/floor-cleaner-back.png" alt="Back"></button>
-<button onclick="changeImage('images/floor-cleaner-front-back.png')"><img src="images/floor-cleaner-front-back.png" alt="Front and back"></button>
-</div>
-</div>
-<div class="product-info">
-<p class="eyebrow">BTS FLOOR CLEANER</p><h3>Floor Cleaner Liquid</h3>
-<p class="size">Net Content: <strong>1000 ML</strong></p>
-<p class="description">A practical floor-cleaning solution for everyday household cleaning.</p>
-<div class="price">₹ <span>ADD PRICE</span></div>
-<div class="quantity"><button onclick="changeQty(-1)">−</button><span id="qty">1</span><button onclick="changeQty(1)">+</button></div>
-<button class="buy-btn" onclick="openOrderForm()">Buy Now</button>
+    <div>
+      <p class="eyebrow">BTS HOME CARE PRODUCTS™</p>
 
-<button class="cart-btn" onclick="addToCart()">Add to Cart</button>
+      <h1>
+        Clean home.<br>
+        <span>Healthy home.</span>
+      </h1>
+
+      <p class="hero-text">
+        Reliable home-care products for everyday cleaning,
+        freshness and hygiene.
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="#products">Shop Products</a>
+        <a class="btn secondary" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img
+        src="images/floor-cleaner-front.png"
+        alt="BTS Floor Cleaner Liquid 1000 ML">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="products" class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <p class="eyebrow">OUR PRODUCTS</p>
+
+      <h2>Shop BTS home-care products.</h2>
+
+      <p>
+        Our BTS Floor Cleaner Liquid is ready to display online.
+        More products can be added next.
+      </p>
+    </div>
+
+
+    <article class="store-product">
+
+      <!-- GALLERY -->
+      <div class="gallery">
+
+        <div class="main-image">
+          <img
+            id="mainProductImage"
+            src="images/floor-cleaner-front.png"
+            alt="BTS Floor Cleaner Liquid 1000 ML">
+        </div>
+
+        <div class="thumbs">
+
+          <button onclick="changeImage('images/floor-cleaner-front.png')">
+            <img
+              src="images/floor-cleaner-front.png"
+              alt="Front">
+          </button>
+
+          <button onclick="changeImage('images/floor-cleaner-back.png')">
+            <img
+              src="images/floor-cleaner-back.png"
+              alt="Back">
+          </button>
+
+          <button onclick="changeImage('images/floor-cleaner-front-back.png')">
+            <img
+              src="images/floor-cleaner-front-back.png"
+              alt="Front and Back">
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT INFORMATION -->
+      <div class="product-info">
+
+        <p class="eyebrow">BTS FLOOR CLEANER</p>
+
+        <h3>Floor Cleaner Liquid</h3>
+
+        <p class="size">
+          Net Content:
+          <strong>1000 ML</strong>
+        </p>
+
+        <p class="description">
+          A practical floor-cleaning solution for everyday
+          household cleaning.
+        </p>
+
+        <div class="price">
+          ₹ <span id="productPrice">0</span>
+        </div>
+
+        <p style="font-size:13px;color:#777;">
+          Price can be updated later.
+        </p>
+
+
+        <!-- QUANTITY -->
+        <div class="quantity">
+
+          <button onclick="changeQty(-1)">−</button>
+
+          <span id="qty">1</span>
+
+          <button onclick="changeQty(1)">+</button>
+
+        </div>
+
+
+        <!-- BUY NOW -->
+        <button
+          class="buy-btn"
+          onclick="openOrderForm()">
+          Buy Now
+        </button>
+
+
+        <!-- ADD TO CART -->
+        <button
+          class="cart-btn"
+          onclick="addToCart()">
+          Add to Cart
+        </button>
+
+      </div>
+
+    </article>
+
+
+    <!-- OTHER PRODUCTS -->
+    <div class="products-more">
+
+      <article class="product">
+        <div class="product-icon">PH</div>
+        <h3>Phenyl</h3>
+        <p>Product page coming next.</p>
+      </article>
+
+      <article class="product">
+        <div class="product-icon">TC</div>
+        <h3>Toilet Cleaner</h3>
+        <p>Product page coming next.</p>
+      </article>
+
+      <article class="product">
+        <div class="product-icon">DW</div>
+        <h3>Dish Wash</h3>
+        <p>Product page coming next.</p>
+      </article>
+
+      <article class="product">
+        <div class="product-icon">LS</div>
+        <h3>Liquid Soap</h3>
+        <p>Product page coming next.</p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CART -->
+<section id="cart" class="cart-section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <p class="eyebrow">YOUR CART</p>
+      <h2>Shopping Cart</h2>
+      <p>Review your products before placing your order.</p>
+    </div>
+
+    <div class="cart-box">
+
+      <div id="cartItems">
+        <div class="empty-cart">
+          Your cart is empty.
+        </div>
+      </div>
+
+      <div
+        id="cartTotal"
+        class="cart-total">
+        Total: ₹0
+      </div>
+
+      <button
+        id="checkoutButton"
+        class="checkout-btn"
+        onclick="openOrderForm()">
+        Proceed to Order
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ORDER FORM -->
+<section id="orderForm" class="order-form">
+
+  <h2>Place Your Order</h2>
+
+  <p>
+    Enter your details. We will prepare your order.
+  </p>
+
+  <label>Name</label>
+  <input
+    id="customerName"
+    type="text"
+    placeholder="Your name">
+
+  <label>Mobile Number</label>
+  <input
+    id="customerPhone"
+    type="tel"
+    placeholder="Your mobile number">
+
+  <label>Delivery Address</label>
+  <textarea
+    id="customerAddress"
+    rows="4"
+    placeholder="Complete delivery address"></textarea>
+
+  <button
+    class="whatsapp-btn"
+    onclick="sendWhatsAppOrder()">
+    Send Order
+  </button>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="about section">
+
+  <div class="container about-grid">
+
+    <div>
+
+      <p class="eyebrow">
+        ABOUT BTS HOME CARE PRODUCTS
+      </p>
+
+      <h2>
+        Clean for all, healthy for all.
+      </h2>
+
+      <p>
+        BTS HOME CARE PRODUCTS™ is a home-care product brand
+        focused on useful cleaning products for everyday households.
+      </p>
+
+      <p>
+        We aim to offer practical products with clear product
+        information and a simple customer experience.
+      </p>
+
+    </div>
+
+    <div class="feature-list">
+
+      <div>
+        <strong>01</strong>
+        <span>Everyday home-care solutions</span>
+      </div>
+
+      <div>
+        <strong>02</strong>
+        <span>Simple and useful product range</span>
+      </div>
+
+      <div>
+        <strong>03</strong>
+        <span>Customer-focused service</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+
+  <div class="container contact-grid">
+
+    <div>
+
+      <p class="eyebrow">CONTACT</p>
+
+      <h2>We're here to help.</h2>
+
+      <p>
+        WhatsApp number can be added when you are ready.
+      </p>
+
+    </div>
+
+    <div class="contact-box">
+
+      <div>
+        <span>WhatsApp</span>
+        <strong>Number to be updated</strong>
+      </div>
+
+      <div>
+        <span>Email</span>
+        <strong>vkbrothersgroup@gmail.com</strong>
+      </div>
+
+      <div>
+        <span>Address</span>
+        <strong>
+          Old No. 1/11, New No. 36,<br>
+          Alagunachiyar Puram,<br>
+          Rajakkoor Post,<br>
+          Madurai - 625107,<br>
+          Tamil Nadu, India.
+        </strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer">
+
+    <div>
+      <strong>BTS HOME CARE PRODUCTS™</strong>
+      <p>Clean for all, healthy for all.</p>
+    </div>
+
+    <p>
+      © 2026 BTS HOME CARE PRODUCTS.
+      All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
 
 <script>
-function addToCart() {
-  const quantity = parseInt(document.getElementById("qty").textContent);
-  const cartCount = document.getElementById("cartCount");
 
-  const currentCount = parseInt(cartCount.textContent) || 0;
-  cartCount.textContent = currentCount + quantity;
+let cart = [];
+
+function changeImage(src) {
+  document.getElementById("mainProductImage").src = src;
+}
+
+
+function changeQty(delta) {
+
+  const qtyElement = document.getElementById("qty");
+
+  let quantity =
+    parseInt(qtyElement.textContent) || 1;
+
+  quantity = Math.max(1, quantity + delta);
+
+  qtyElement.textContent = quantity;
+}
+
+
+function addToCart() {
+
+  const quantity =
+    parseInt(document.getElementById("qty").textContent) || 1;
+
+  const existingProduct =
+    cart.find(item => item.name === "BTS Floor Cleaner Liquid");
+
+  if (existingProduct) {
+
+    existingProduct.quantity += quantity;
+
+  } else {
+
+    cart.push({
+      name: "BTS Floor Cleaner Liquid",
+      quantity: quantity,
+      price: 0,
+      image: "images/floor-cleaner-front.png"
+    });
+
+  }
+
+  updateCart();
 
   alert(
     "ADDED TO CART\n\n" +
@@ -60,148 +577,228 @@ function addToCart() {
     "Net Content: 1000 ML\n" +
     "Quantity: " + quantity
   );
-}
-</script>
-</div>
-</article>
 
-<div class="products-more">
-<article class="product"><div class="product-icon">PH</div><h3>Phenyl</h3><p>Product page coming next.</p></article>
-<article class="product"><div class="product-icon">TC</div><h3>Toilet Cleaner</h3><p>Product page coming next.</p></article>
-<article class="product"><div class="product-icon">DW</div><h3>Dish Wash</h3><p>Product page coming next.</p></article>
-<article class="product"><div class="product-icon">LS</div><h3>Liquid Soap</h3><p>Product page coming next.</p></article>
-</div>
-</div></section>
-
-<section id="about" class="about section"><div class="container about-grid"><div>
-<p class="eyebrow">ABOUT BTS HOME CARE PRODUCTS</p><h2>Clean for all, healthy for all.</h2>
-<p>BTS HOME CARE PRODUCTS™ is a home-care product brand focused on useful cleaning products for everyday households.</p>
-<p>We aim to offer practical products with clear product information and a simple customer experience.</p>
-</div><div class="feature-list">
-<div><strong>01</strong><span>Everyday home-care solutions</span></div>
-<div><strong>02</strong><span>Simple and useful product range</span></div>
-<div><strong>03</strong><span>Customer-focused service</span></div>
-</div></div></section>
-
-<section class="cta"><div class="container cta-inner"><div><p class="eyebrow">BTS HOME CARE PRODUCTS™</p><h2>Ready to keep your home clean?</h2></div><a class="btn white" href="#contact">Contact Us</a></div></section>
-
-<section id="contact" class="section contact"><div class="container contact-grid"><div>
-<p class="eyebrow">CONTACT</p><h2>We're here to help.</h2><p>WhatsApp number can be added when you are ready.</p>
-</div><div class="contact-box">
-<div><span>WhatsApp</span><strong>Number to be updated</strong></div>
-<div><span>Email</span><strong>vkbrothersgroup@gmail.com</strong></div>
-<div><span>Address</span><strong>Madurai, Tamil Nadu, India</strong></div>
-</div></div></section>
-</main>
-
-<footer><div class="container footer"><div><strong>BTS HOME CARE PRODUCTS™</strong><p>Clean for all, healthy for all.</p></div><p>© 2026 BTS HOME CARE PRODUCTS. All rights reserved.</p></div></footer>
-
-<script>
-function changeImage(src){document.getElementById('mainProductImage').src=src;}
-function changeQty(delta){const e=document.getElementById('qty');e.textContent=Math.max(1,parseInt(e.textContent)+delta);}
-</script>
-  <script>
-function changeImage(src){document.getElementById('mainProductImage').src=src;}
-function changeQty(delta){const e=document.getElementById('qty');e.textContent=Math.max(1,parseInt(e.textContent)+delta);}
-</script>
-  function changeQty(delta){const e=document.getElementById('qty');e.textContent=Math.max(1,parseInt(e.textContent)+delta);}
-  function openOrderForm(){
-  const name = prompt("Enter your full name:");
-  if(!name) return;
-
-  const mobile = prompt("Enter your mobile number:");
-  if(!mobile) return;
-
-  const address = prompt("Enter your full delivery address:");
-  if(!address) return;
-
-  const pincode = prompt("Enter your 6-digit pincode:");
-  if(!pincode) return;
-
-  const quantity = document.getElementById("qty").textContent;
-
-  alert(
-    "ORDER DETAILS\n\n" +
-    "Product: BTS Floor Cleaner Liquid\n" +
-    "Net Content: 1000 ML\n" +
-    "Quantity: " + quantity + "\n" +
-    "Name: " + name + "\n" +
-    "Mobile: " + mobile + "\n" +
-    "Address: " + address + "\n" +
-    "Pincode: " + pincode + "\n\n" +
-    "Order received. Payment and delivery will be connected next."
-  );
-}
-  <script>
-function changeImage(src){document.getElementById('mainProductImage').src=src;}
-function changeQty(delta){const e=document.getElementById('qty');e.textContent=Math.max(1,parseInt(e.textContent)+delta);}
-
-function openOrderForm(){
-  const name = prompt("Enter your full name:");
-  if(!name) return;
-
-  const mobile = prompt("Enter your mobile number:");
-  if(!mobile) return;
-
-  const address = prompt("Enter your full delivery address:");
-  if(!address) return;
-
-  const pincode = prompt("Enter your 6-digit pincode:");
-  if(!pincode) return;
-
-  const quantity = document.getElementById("qty").textContent;
-
-  alert(
-    "ORDER DETAILS\n\n" +
-    "Product: BTS Floor Cleaner Liquid\n" +
-    "Net Content: 1000 ML\n" +
-    "Quantity: " + quantity + "\n" +
-    "Name: " + name + "\n" +
-    "Mobile: " + mobile + "\n" +
-    "Address: " + address + "\n" +
-    "Pincode: " + pincode + "\n\n" +
-    "Order received. Payment and delivery will be connected next."
-  );
-}
-</script>
-  <script>
-    <script>
-function changeImage(src) {
-  document.getElementById('mainProductImage').src = src;
+  document.getElementById("cart")
+    .scrollIntoView({behavior:"smooth"});
 }
 
-function changeQty(delta) {
-  const e = document.getElementById('qty');
-  e.textContent = Math.max(1, parseInt(e.textContent) + delta);
+
+function updateCart() {
+
+  const cartCount =
+    document.getElementById("cartCount");
+
+  const cartItems =
+    document.getElementById("cartItems");
+
+  const cartTotal =
+    document.getElementById("cartTotal");
+
+  let totalQuantity = 0;
+  let totalPrice = 0;
+
+  cart.forEach(item => {
+
+    totalQuantity += item.quantity;
+
+    totalPrice +=
+      item.quantity * item.price;
+
+  });
+
+
+  cartCount.textContent = totalQuantity;
+
+
+  if (cart.length === 0) {
+
+    cartItems.innerHTML =
+      '<div class="empty-cart">Your cart is empty.</div>';
+
+    cartTotal.textContent =
+      "Total: ₹0";
+
+    return;
+  }
+
+
+  cartItems.innerHTML = "";
+
+
+  cart.forEach((item, index) => {
+
+    const itemTotal =
+      item.quantity * item.price;
+
+    const div =
+      document.createElement("div");
+
+    div.className = "cart-item";
+
+    div.innerHTML = `
+
+      <img
+        src="${item.image}"
+        alt="${item.name}">
+
+      <div class="cart-item-info">
+
+        <h3>${item.name}</h3>
+
+        <p>Net Content: 1000 ML</p>
+
+        <p>
+          Quantity:
+          <strong>${item.quantity}</strong>
+        </p>
+
+        <p>
+          Price:
+          ₹${item.price}
+        </p>
+
+      </div>
+
+      <button
+        class="remove-btn"
+        onclick="removeFromCart(${index})">
+        Remove
+      </button>
+
+    `;
+
+    cartItems.appendChild(div);
+
+  });
+
+
+  cartTotal.textContent =
+    "Total: ₹" + totalPrice;
+
 }
+
+
+function removeFromCart(index) {
+
+  cart.splice(index, 1);
+
+  updateCart();
+
+}
+
 
 function openOrderForm() {
-  const name = prompt("Enter your full name:");
-  if (!name) return;
 
-  const mobile = prompt("Enter your mobile number:");
-  if (!mobile) return;
+  if (cart.length === 0) {
 
-  const address = prompt("Enter your full delivery address:");
-  if (!address) return;
+    addToCart();
 
-  const pincode = prompt("Enter your 6-digit pincode:");
-  if (!pincode) return;
+    return;
+  }
 
-  const quantity = document.getElementById("qty").textContent;
+  const form =
+    document.getElementById("orderForm");
 
-  alert(
-    "ORDER DETAILS\n\n" +
-    "Product: BTS Floor Cleaner Liquid\n" +
-    "Net Content: 1000 ML\n" +
-    "Quantity: " + quantity + "\n" +
-    "Name: " + name + "\n" +
-    "Mobile: " + mobile + "\n" +
-    "Address: " + address + "\n" +
-    "Pincode: " + pincode + "\n\n" +
-    "Order received. Payment and delivery will be connected next."
-  );
+  form.style.display = "block";
+
+  form.scrollIntoView({
+    behavior: "smooth"
+  });
+
 }
+
+
+function sendWhatsAppOrder() {
+
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const phone =
+    document.getElementById("customerPhone").value.trim();
+
+  const address =
+    document.getElementById("customerAddress").value.trim();
+
+
+  if (!name || !phone || !address) {
+
+    alert(
+      "Please enter your name, mobile number and delivery address."
+    );
+
+    return;
+  }
+
+
+  let message =
+    "BTS HOME CARE PRODUCTS - ORDER\n\n";
+
+  message +=
+    "Customer Name: " + name + "\n";
+
+  message +=
+    "Mobile: " + phone + "\n";
+
+  message +=
+    "Address: " + address + "\n\n";
+
+  message +=
+    "PRODUCTS:\n";
+
+
+  let total = 0;
+
+
+  cart.forEach(item => {
+
+    const itemTotal =
+      item.quantity * item.price;
+
+    message +=
+      item.name +
+      " - Qty: " +
+      item.quantity +
+      " - ₹" +
+      itemTotal +
+      "\n";
+
+    total += itemTotal;
+
+  });
+
+
+  message +=
+    "\nTotal: ₹" + total;
+
+
+  /*
+    IMPORTANT:
+    Replace 919999999999 with
+    your actual WhatsApp number later.
+
+    Example:
+    India number 9876543210
+    becomes:
+    919876543210
+  */
+
+  const whatsappNumber =
+    "919999999999";
+
+  const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
+
+}
+
 </script>
 
 </body>
