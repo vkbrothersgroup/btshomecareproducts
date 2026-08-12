@@ -80,4 +80,68 @@
 function changeImage(src){document.getElementById('mainProductImage').src=src;}
 function changeQty(delta){const e=document.getElementById('qty');e.textContent=Math.max(1,parseInt(e.textContent)+delta);}
 </script>
+  <script>
+function changeImage(src){document.getElementById('mainProductImage').src=src;}
+function changeQty(delta){const e=document.getElementById('qty');e.textContent=Math.max(1,parseInt(e.textContent)+delta);}
+</script>
+  function changeQty(delta){const e=document.getElementById('qty');e.textContent=Math.max(1,parseInt(e.textContent)+delta);}
+  function openOrderForm(){
+  const name = prompt("Enter your full name:");
+  if(!name) return;
+
+  const mobile = prompt("Enter your mobile number:");
+  if(!mobile) return;
+
+  const address = prompt("Enter your full delivery address:");
+  if(!address) return;
+
+  const pincode = prompt("Enter your 6-digit pincode:");
+  if(!pincode) return;
+
+  const quantity = document.getElementById("qty").textContent;
+
+  alert(
+    "ORDER DETAILS\n\n" +
+    "Product: BTS Floor Cleaner Liquid\n" +
+    "Net Content: 1000 ML\n" +
+    "Quantity: " + quantity + "\n" +
+    "Name: " + name + "\n" +
+    "Mobile: " + mobile + "\n" +
+    "Address: " + address + "\n" +
+    "Pincode: " + pincode + "\n\n" +
+    "Order received. Payment and delivery will be connected next."
+  );
+}
+  <script>
+function changeImage(src){document.getElementById('mainProductImage').src=src;}
+function changeQty(delta){const e=document.getElementById('qty');e.textContent=Math.max(1,parseInt(e.textContent)+delta);}
+
+function openOrderForm(){
+  const name = prompt("Enter your full name:");
+  if(!name) return;
+
+  const mobile = prompt("Enter your mobile number:");
+  if(!mobile) return;
+
+  const address = prompt("Enter your full delivery address:");
+  if(!address) return;
+
+  const pincode = prompt("Enter your 6-digit pincode:");
+  if(!pincode) return;
+
+  const quantity = document.getElementById("qty").textContent;
+
+  alert(
+    "ORDER DETAILS\n\n" +
+    "Product: BTS Floor Cleaner Liquid\n" +
+    "Net Content: 1000 ML\n" +
+    "Quantity: " + quantity + "\n" +
+    "Name: " + name + "\n" +
+    "Mobile: " + mobile + "\n" +
+    "Address: " + address + "\n" +
+    "Pincode: " + pincode + "\n\n" +
+    "Order received. Payment and delivery will be connected next."
+  );
+}
+</script>
 </body></html>
